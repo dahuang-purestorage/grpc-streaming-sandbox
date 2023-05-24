@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package api;
+
+option go_package = "github.com/dahuang-purestorage/grpc-streaming-sandbox/api;api";
+
+
+service Adder {
+    rpc GetNumber (GetRequest) returns (stream GetResponse) {}
+}
+
+message GetRequest {
+}
+
+message GetResponse {
+    int32 randomNumber = 1;
+}
